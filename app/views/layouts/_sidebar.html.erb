@@ -1,0 +1,5 @@
+<%= turbo_stream_from "channels" %>
+<h3>Channels</h3>
+<%= turbo_frame_tag "channels" do %>
+    <%= render @channels %>
+<% end %>

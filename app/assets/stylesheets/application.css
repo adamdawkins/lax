@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 15px;
+  line-height: 1.46668;
+  font-weight: 400;
+  color: rgb(29, 29, 29);
+}
+
+.client {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+}
+
+.workspace-layout {
+  display: grid;
+  grid-template-columns: 260px auto;
+  grid-template-areas: 'workspace__sidebar workspace__primary_view';
+}
+
+.workspace__sidebar {
+  grid-area: workspace__sidebar;
+  display: grid;
+  grid-template-rows: auto;
+}
+
+.workspace__channel-sidebar {
+  background-color: rgb(48, 62, 77);
+  color: white;
+}
+
+.workspace__primary-view {
+  grid-area: workspace__primary-view;
+  display: grid;
+  grid-template-rows: auto;
+}
+
+.workspace__sidebar a {
+  color: white;
+  text-decoration: none;
+}

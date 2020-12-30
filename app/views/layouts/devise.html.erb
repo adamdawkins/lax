@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lax</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_pack_tag 'application' %>
+    <%= turbo_include_tags %>
+    <%= stimulus_include_tags %>
+  </head>
+
+  <body>
+    <div class="client">
+      <div class="workspace-layout">
+        <div class="workspace__sidebar">
+          <div class="workspace__channel-sidebar">
+          </div>
+        </div>
+        <div class="workspace__primary_view" role="main">
+          <%= turbo_frame_tag "main" do %>
+            <%= yield %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
