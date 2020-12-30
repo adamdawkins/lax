@@ -1,0 +1,5 @@
+<%= form_with(model: [message.channel, message]) do |form| %>
+    <%= form.text_field :body %>
+
+    <%= form.submit %>
+<% end %>

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ChannelsController < ApplicationController
   before_action :set_channel, only: [:show, :edit, :update, :destroy]
 
@@ -10,6 +12,7 @@ class ChannelsController < ApplicationController
   # GET /channels/1
   # GET /channels/1.json
   def show
+    @message = Message.new(channel: @channel)
   end
 
   # GET /channels/new
@@ -62,6 +65,7 @@ class ChannelsController < ApplicationController
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_channel
       @channel = Channel.find(params[:id])

@@ -1,0 +1,6 @@
+<div class="message">
+  <div class="message__header">
+    <strong><%= message.user.email %></strong><%= message.created_at.to_s(:short) %>
+  </div>
+  <p class="message__body"><%= message.body %></p>
+</div>

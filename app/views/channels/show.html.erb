@@ -1,9 +1,16 @@
-<p id="notice"><%= notice %></p>
+<%= turbo_stream_from @channel %>
+<div class="channel">
+  <div class="channel__header">
+    <h1><%= @channel.name %></h1>
+  </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @channel.name %>
-</p>
+  <div class="channel__body" id="messages">
+    <%= render @channel.messages %>
+  </div>
 
-<%= link_to 'Edit', edit_channel_path(@channel) %> |
-<%= link_to 'Back', channels_path %>
+  <div class="channel__footer">
+    <%= turbo_frame_tag "new_message", src: new_channel_message_path(@channel), target: "_top" %>
+
+  </div>
+
+</div>
